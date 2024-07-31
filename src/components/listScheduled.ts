@@ -1,3 +1,42 @@
 export const daysScheduled = [
-    { start: "10:30 am", end: "11:30 am", day: 10, month: 7, title: "Meeting", author: "Lucas Macharete" }
-]
+  {
+    start: "10:30 am",
+    end: "11:30 am",
+    day: 10,
+    month: 7,
+    title: "Meeting",
+    author: "Lucas Macharete",
+  },
+  {
+    start: "11:30 am",
+    end: "12:30 am",
+    day: 10,
+    month: 7,
+    title: "teste",
+    author: "Lucas Macharete",
+  },
+  {
+    start: "10:30 am",
+    end: "11:30 am",
+    day: 11,
+    month: 7,
+    title: "Meeting",
+    author: "Lucas Macharete",
+  },
+  {
+    start: "10:30 am",
+    end: "11:30 am",
+    day: 31,
+    month: 7,
+    title: "Meeting",
+    author: "Lucas Macharete",
+  },
+  {
+    start: "10:30 am",
+    end: "11:30 am",
+    day: 25,
+    month: 6,
+    title: "Meeting",
+    author: "Lucas Macharete",
+  },
+];
