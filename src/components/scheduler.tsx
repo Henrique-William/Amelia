@@ -1,24 +1,25 @@
-import { Calendar, Badge } from 'rsuite';
-import 'rsuite/dist/rsuite.min.css';
+import { Calendar, Badge } from "rsuite";
+import "rsuite/dist/rsuite.min.css";
+
+import { daysScheduled } from "./listScheduled";
 
 function getTodoList(date: Date) {
   const day = date.getDate();
+  const month = date.getMonth();
 
-  switch (day) {
-    case 10:
-      return [
-        { time: '10:30 am', title: 'Meeting' },
-        { time: '12:00 pm', title: 'Lunch' }
-      ];
-    case 15:
-      return [
-        { time: '09:30 pm', title: 'Products Introduction Meeting' },
-        { time: '12:30 pm', title: 'Client entertaining' },
-        { time: '02:00 pm', title: 'Product design discussion' },
-        { time: '05:00 pm', title: 'Product test and acceptance' },
-        { time: '06:30 pm', title: 'Reporting' },
-        { time: '10:00 pm', title: 'Going home to walk the dog' }
-      ];
+  const dayScheduled = daysScheduled[0].day;
+  const monthScheduled = daysScheduled[0].month - 1; //menos 1 por causa que o month é um array: jan = getMonth[0]
+
+  switch (month) {
+    case monthScheduled:
+      switch (day) {
+        case dayScheduled:
+          return [
+            daysScheduled[0]
+          ];
+        default:
+          return [];
+      }
     default:
       return [];
   }
@@ -35,8 +36,8 @@ function Scheduler() {
     return null;
   }
   return (
-    <div className='flex justify-center'>
-      <Calendar compact bordered renderCell={renderCell} />{' '}
+    <div className="flex justify-center">
+      <Calendar compact bordered renderCell={renderCell} />{" "}
     </div>
   );
 }
